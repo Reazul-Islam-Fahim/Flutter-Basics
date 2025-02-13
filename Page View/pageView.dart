@@ -14,6 +14,13 @@ class _MyAppState extends State<MyApp> {
   PageController _controller = PageController(
     initialPage: 0,
   );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
