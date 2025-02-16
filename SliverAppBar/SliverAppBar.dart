@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/one.dart';
-import 'package:test_app/two.dart';
 
 void main() => runApp(MyApp());
 
