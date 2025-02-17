@@ -24,9 +24,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-
-  String? selected = "Choose";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
