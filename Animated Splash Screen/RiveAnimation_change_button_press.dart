@@ -1,6 +1,5 @@
-// import 'package:flare_flutter/flare_actor.dart';
-import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,21 +25,26 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  bool value = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.blue,
-        child: Center(
-          child: RiveAnimation.asset(
-            'assets/animations/A.riv', // Path to your .riv file
-            animations: ['Rectangle shape morphing animation'], // Name of the animation in the .riv file
-            onInit: (artboard) {
-              debugPrint('Demo Mode');
-            },
+        floatingActionButton: FloatingActionButton(onPressed: () {
+          setState(() {
+            value = !value;
+          });
+        }),
+        body: Container(
+          color: Colors.blue,
+          child: Center(
+            child: RiveAnimation.asset(
+              'assets/animations/A.riv', // Path to your .riv file
+              animations: value == false
+                  ? ['Demo Mode']
+                  : ['Sun Rotate'], // Name of the animation in the .riv file
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
