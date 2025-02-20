@@ -45,9 +45,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ElevatedButton(
-            onPressed: _launchURL,
-            child: const Text('Click')),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: _launchURL,
+              child: const Text('tel: +881679620666')),
+            ElevatedButton(
+                onPressed: _launchURL,
+                child: const Text('sms: +881679620666')),
+            
+          ]
+        ),
       ),
     );
   }
